@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="default_currency">
+    <item>EUR</item>
+    <item>USD</item>
+    <item>GBP</item>
+  </string-array>
+  
+  <string-array name="currencies">
+    <item>Euro (€)</item>
+    <item>US Dollar ($)</item>
+    <item>British Pound (£)</item>
+    <item>Croatian Kuna (kn)</item>
+    <item>Australian Dollar (A$)</item>
+    <item>Polish Zloty (zł)</item>
+    <item>Indian Rupee (₹)</item>
+    <item>Indonesian Rupiah (Rp)</item>
+    <item>Japanese Yen (¥)</item>
+    <item>Bulgarian Lev (лв)</item>
+    <item>Israeli Shekel (₪)</item>
+    <item>Singapore Dollar (S$)</item>
+    <item>Philippine Peso (₱)</item>
+    <item>New Zealand Dollar (NZ$)</item>
+    <item>Danish Krone (kr)</item>
+    <item>Czech Koruna (Kč)</item>
+    <item>Chinese Yuan (¥)</item>
+    <item>South African Rand (R)</item>
+    <item>Hungarian Forint (Ft)</item>
+    <item>Icelandic Krona (kr)</item>
+    <item>Turkish Lira (‎₺)</item>
+    <item>Russian Ruble (₽)</item>
+    <item>South Korean Won (₩)</item>
+    <item>Norwegian Krone (kr)</item>
+    <item>Brazilian Real (R$)</item>
+    <item>Swiss Franc (Fr)</item>
+    <item>Mexican Peso (Mex$)</item>
+    <item>Hong Kong Dollar (HK$)</item>
+    <item>Romanian Leu (lei)</item>
+    <item>Swedish Krona (kr)</item>
+    <item>Canadian dollar (C$)</item>
+    <item>Malaysian Ringgit (RM)</item>
+    <item>Thailand Baht (‎฿)</item>
+  </string-array>
+  
+  <string-array name="currency_codes">
+    <item>EUR</item>
+    <item>USD</item>
+    <item>GBP</item>
+    <item>HRK</item>
+    <item>AUD</item>
+    <item>PLN</item>
+    <item>INR</item>
+    <item>IDR</item>
+    <item>JPY</item>
+    <item>BGN</item>
+    <item>ILS</item>
+    <item>SGD</item>
+    <item>PHP</item>
+    <item>NZD</item>
+    <item>DKK</item>
+    <item>CZK</item>
+    <item>CNY</item>
+    <item>ZAR</item>
+    <item>HUF</item>
+    <item>ISK</item>
+    <item>TRY</item>
+    <item>RUB</item>
+    <item>KRW</item>
+    <item>NOK</item>
+    <item>BRL</item>
+    <item>CHF</item>
+    <item>MXN</item>
+    <item>HKD</item>
+    <item>RON</item>
+    <item>SEK</item>
+    <item>CAD</item>
+    <item>MYR</item>
+    <item>THB</item>
+  </string-array>
+</resources>

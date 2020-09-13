@@ -1,0 +1,44 @@
+<resources>
+  <string name="app_name">Gross2Net</string>
+  <string name="zero_btn">0</string>
+  <string name="one_btn">1</string>
+  <string name="two_btn">2</string>
+  <string name="three_btn">3</string>
+  <string name="four_btn">4</string>
+  <string name="five_btn">5</string>
+  <string name="six_btn">6</string>
+  <string name="seven_btn">7</string>
+  <string name="eight_btn">8</string>
+  <string name="nine_btn">9</string>
+  <string name="dot_btn">.</string>
+  <string name="pct_btn">%</string>
+  <string name="er_btn">⬅</string>
+  <string name="clear">CLEAR</string>
+  <string name="gross_amount">Gross amount</string>
+  <string name="net_amount">Net amount</string>
+  <string name="vat">VAT</string>
+  <string name="other_tax">Other tax</string>
+  <string name="income_tax">Income tax</string>
+  <string name="insurance_tax">Insurance tax</string>
+  <string name="arrows">⇅</string>
+  <string name="month">Month</string>
+  <string name="months_12">12-month</string>
+  <string name="months_14">14-month</string>
+  <string name="settings">Settings</string>
+  <string name="title_activity_settings">SettingsActivity</string>
+  
+  <!-- Preference Titles -->
+  <string name="messages_header">Messages</string>
+  <string name="sync_header">Sync</string>
+  
+  <!-- Messages Preferences -->
+  <string name="signature_title">Your signature</string>
+  <string name="reply_title">Default reply action</string>
+  
+  <!-- Sync Preferences -->
+  <string name="sync_title">Sync email periodically</string>
+  <string name="attachment_title">Download incoming attachments</string>
+  <string name="attachment_summary_on">Automatically download attachments for incoming emails
+  </string>
+  <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>

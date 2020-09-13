@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:layout_gravity="center_horizontal"
+  android:gravity="center" >
+  
+  <Button
+    android:id="@+id/clear_gross"
+    android:text="@string/clear"
+    android:layout_marginTop="3dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+  
+  <EditText
+    android:id="@+id/gross"
+    android:hint="@string/gross_amount"
+    android:inputType="numberDecimal"
+    android:layout_toEndOf="@id/clear_gross"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:gravity="end|bottom"
+    android:textSize="25sp"
+    android:importantForAutofill="no" />
+  
+  <Button
+    android:id="@+id/clear_net"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/convert_btn"
+    android:layout_marginTop="3dp"
+    android:text="@string/clear" />
+  
+  <EditText
+    android:id="@+id/net"
+    android:hint="@string/net_amount"
+    android:inputType="numberDecimal"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/convert_btn"
+    android:layout_toEndOf="@id/clear_net"
+    android:gravity="end|bottom"
+    android:textSize="25sp"
+    android:importantForAutofill="no" />
+  
+  <Button
+    android:id="@+id/convert_btn"
+    android:text="@string/arrows"
+    android:textSize="40sp"
+    android:textStyle="bold"
+    android:gravity="bottom"
+    android:textAlignment="gravity"
+    android:layout_below="@id/gross"
+    android:layout_width="55dp"
+    android:layout_height="65dp"
+    android:layout_marginVertical="10dp"
+    android:layout_centerHorizontal="true" />
+  
+  <RadioGroup
+    android:id="@+id/radios_gross"
+    android:checkedButton="@id/month_gross"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_above="@id/clear_gross"
+    android:layout_marginBottom="30dp" >
+    
+    <RadioButton
+      android:id="@+id/month_gross"
+      android:text="@string/month"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    
+    <RadioButton
+      android:id="@+id/year_gross"
+      android:text="@string/months_12"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    
+    <RadioButton
+      android:id="@+id/year_gross_2"
+      android:text="@string/months_14"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+  </RadioGroup>
+  
+  <RadioGroup
+    android:id="@+id/radios_net"
+    android:checkedButton="@id/month_net"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_below="@id/clear_net"
+    android:layout_marginTop="30dp" >
+    
+    <RadioButton
+      android:id="@+id/month_net"
+      android:text="@string/month"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    
+    <RadioButton
+      android:id="@+id/year_net"
+      android:text="@string/months_12"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+    
+    <RadioButton
+      android:id="@+id/year_net_2"
+      android:text="@string/months_14"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+  </RadioGroup>
+  
+  <CheckBox
+    android:id="@+id/income_tax"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:layout_below="@id/currencies_net"
+    android:layout_marginTop="30dp"
+    android:layout_alignEnd="@id/currencies_net"
+    android:text="@string/income_tax" />
+  
+  <CheckBox
+    android:id="@+id/insurance_tax"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:layout_below="@id/income_tax"
+    android:layout_alignEnd="@id/currencies_net"
+    android:text="@string/insurance_tax" />
+  
+  <CheckBox
+    android:id="@+id/other_tax"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:layout_below="@id/insurance_tax"
+    android:layout_alignEnd="@id/currencies_net"
+    android:text="@string/other_tax" />
+  
+  <CheckBox
+    android:id="@+id/vat"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    android:layout_below="@id/other_tax"
+    android:layout_alignEnd="@id/currencies_net"
+    android:text="@string/vat" />
+  
+  <Spinner
+    style="@style/SpinnerTheme"
+    android:id="@+id/currencies_gross"
+    android:layout_toEndOf="@id/gross"
+    android:layout_marginTop="3dp"
+    android:layout_marginStart="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="45dp"
+    android:textAlignment="textStart"
+    android:spinnerMode="dropdown" />
+  
+  <Spinner
+    style="@style/SpinnerTheme"
+    android:id="@+id/currencies_net"
+    android:layout_below="@id/convert_btn"
+    android:layout_toEndOf="@id/net"
+    android:layout_marginTop="3dp"
+    android:layout_marginStart="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="45dp"
+    android:spinnerMode="dropdown" />
+</RelativeLayout>
