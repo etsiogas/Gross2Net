@@ -1,4 +1,4 @@
-package com.example.gross2net;
+package com.example.MulticurrencySalaryCalculator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,11 +34,9 @@ import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -57,6 +55,7 @@ public class MainActivity extends AppCompatActivity
 	String lastFocus = null;
 	Set<String> currenciesSet;
 	Map<String, Double> symbol2Rate;
+	ArrayList<String> currenciesList;
 	SharedPreferences sharedPreferences;
 	SharedPreferences.OnSharedPreferenceChangeListener listener;
 	double incomeTaxRate, insuranceTaxRate, otherTaxRate, VATRate;
@@ -179,12 +178,17 @@ public class MainActivity extends AppCompatActivity
 		
 		sharedPreferences.registerOnSharedPreferenceChangeListener(listener);
 		
-		List<String> currenciesArray = Arrays.asList(getResources().getStringArray( R.array.currencies) );
-		List<String> currencyCodesArray = Arrays.asList(getResources().getStringArray( R.array.currency_codes) );
-		currenciesSet = new HashSet<>(currencyCodesArray);
+		String[] currenciesArray = getResources().getStringArray( R.array.currencies);
+		currenciesSet = new HashSet<>();
+		currenciesList = new ArrayList<>();
 		
-		if( currenciesArray.size() != currencyCodesArray.size() )
-			throw new AssertionError("Size mismatch on currency arrays");
+		for(String string : currenciesArray)
+		{
+			String currencyCode = string.substring(string.indexOf("(") + 1);
+			currencyCode = currencyCode.substring( 0, currencyCode.indexOf("/") );
+			currenciesSet.add(currencyCode);
+			currenciesList.add(currencyCode);
+		}
 	}
 	
 	public void updateCurrencies()
@@ -203,24 +207,7 @@ public class MainActivity extends AppCompatActivity
 						if(currencyCode instanceof String)
 							currentSymbols.add( Code2Symbol.get(currencyCode) );
 						
-					// if( savedCurrencies.isEmpty() )
-					// {
-					// 	Log.i(TAG, "updateCurrencies: Set Euro currency");
-					// 	SharedPreferences.Editor editor = sharedPreferences.edit();
-					
-					//	
-					// 	final String euro = currencyNames.get(0); 
-					// 	editor.putStringSet("currencies_preference", new HashSet<>(Collections.singletonList(euro)) );
-					// 	editor.apply();
-					//	
-					// 	String symbol = euro.substring(euro.indexOf("(") + 1);
-					// 	currencySymbols.add( symbol.substring( 0, symbol.indexOf(")") ) );
-					// }
-					
-					Log.i(TAG, "Saved currencies: " + O);
-					
 					spinnerAdapter = new ArrayAdapter<> (this, android.R.layout.simple_spinner_item, currentSymbols);
-					
 					spinnerGross.setAdapter(spinnerAdapter);
 					spinnerNet.setAdapter(spinnerAdapter);
 					
@@ -282,7 +269,11 @@ public class MainActivity extends AppCompatActivity
 	public boolean onOptionsItemSelected(@NonNull MenuItem item)
 	{
 		if(item.getItemId() == R.id.settings)
-			startActivity( new Intent(this, SettingsActivity.class) );
+		{		
+			Intent intent = new Intent(this, SettingsActivity.class);
+			intent.putStringArrayListExtra("currency_codes", currenciesList);
+			startActivity(intent);
+		}
 		
 		return super.onOptionsItemSelected(item);
 	}
@@ -330,8 +321,6 @@ public class MainActivity extends AppCompatActivity
 			{
 				if(lastFocus == null)
 					return;
-				
-				// Log.i( TAG, Integer.toString( Thread.currentThread().getStackTrace()[2].getLineNumber() ) );
 				
 				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				

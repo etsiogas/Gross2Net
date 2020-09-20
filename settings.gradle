@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Gross2Net'
+rootProject.name='MulticurrencySalaryCalculator'

@@ -8,11 +8,18 @@ import androidx.preference.Preference;
 
 import com.takisoft.preferencex.PreferenceFragmentCompat;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class SettingsFragment extends PreferenceFragmentCompat
 {
 	static final String TAG = SettingsFragment.class.getSimpleName();
+	ArrayList<String> currencyCodes;
+	
+	public SettingsFragment(ArrayList<String> arrayList)
+	{
+		currencyCodes = arrayList;
+	}
 	
 	@Override
 	public void onCreatePreferencesFix(@Nullable Bundle savedInstanceState, String rootKey)
@@ -22,8 +29,8 @@ public class SettingsFragment extends PreferenceFragmentCompat
 		
 		if(preference != null)
 		{
-			// List<String> currencyNames = Arrays.asList(getResources().getStringArray( R.array.currencies) );
-			// preference.setValues( new HashSet<>( currencyNames.subList(0, 3) ) );
+			String[] codesArray = new String[currencyCodes.size()];
+			preference.setEntryValues(currencyCodes.toArray(codesArray));
 			
 			preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener()
 			{
