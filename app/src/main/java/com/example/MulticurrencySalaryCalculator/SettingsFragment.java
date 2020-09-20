@@ -1,4 +1,4 @@
-package com.example.gross2net;
+package com.example.MulticurrencySalaryCalculator;
 
 import android.os.Bundle;
 

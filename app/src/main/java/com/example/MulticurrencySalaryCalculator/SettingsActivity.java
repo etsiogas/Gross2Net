@@ -1,11 +1,8 @@
-package com.example.gross2net;
+package com.example.MulticurrencySalaryCalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
-
-import java.util.ArrayList;
 
 public class SettingsActivity extends AppCompatActivity
 {
