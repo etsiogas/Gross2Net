@@ -8,7 +8,7 @@
     <MultiSelectListPreference
       app:iconSpaceReserved="false"
       android:entries="@array/currencies"
-      android:defaultValue="@array/default_codes"
+      android:defaultValue="@array/default_currencies"
       android:key="currencies_preference"
       android:title="Currencies" />
     

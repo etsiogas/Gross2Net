@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string-array name="default_codes">
+  <string-array name="default_currencies">
     <item>EUR</item>
     <item>USD</item>
     <item>GBP</item>
